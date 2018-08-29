@@ -7,14 +7,14 @@
   <%= @artist.genre %>
 </div>
 
-<ul class="albums">
+<ul class="albums list-group">
   <% @artist.albums.each do |album| %>
-    <li class="album">
+    <li class="album list-group-item">
       <% if album[:cover].length > 0 %>
         <img src="<%= album[:cover] %>" alt="" />
       <% end %>
 
-      <%= album[:name] %>/
+      <%= album[:name] %> -
       <%= album[:date_released] %>
     </li>
   <% end %>
