@@ -25,4 +25,8 @@ class Artist
     @@next_id += 1
   end
 
+  def add_album(name)
+    @albums.push(name)
+  end
+
 end

@@ -62,4 +62,12 @@ describe Artist do
       expect(Artist.all()).to eq([])
     end
   end
+
+  describe '#add_album' do
+    it 'adds and album the the albums list of the artist' do
+      @artist.save()
+      @artist.add_album('Foo')
+      expect(@artist.albums()).to eq(['Foo'])
+    end
+  end
 end
