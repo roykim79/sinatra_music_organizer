@@ -21,6 +21,20 @@ describe Artist do
     end
   end
 
+  describe '#name=' do
+    it 'changes the value of the artist name' do
+      @artist.name = 'Mike'
+      expect(@artist.name()).to eq('Mike')
+    end
+  end
+
+  describe '#genre=' do
+    it 'changes the value of the artist genre' do
+      @artist.genre = 'Rap'
+      expect(@artist.genre()).to eq('Rap')
+    end
+  end
+
   describe '.all' do
     it 'starts off as an empty list' do
       expect(Artist.all()).to eq([])

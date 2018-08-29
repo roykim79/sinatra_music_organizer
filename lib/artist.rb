@@ -2,7 +2,8 @@ class Artist
   @@next_id = 1
   @@artists = []
 
-  attr_accessor :name, :genre, :albums, :id
+  attr_reader :id, :albums
+  attr_accessor :name, :genre
 
   def initialize(attributes)
     @name = attributes.fetch(:name)
