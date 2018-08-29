@@ -14,5 +14,9 @@ describe Artist do
     it 'sets the albums to an empty list' do
       expect(@artist.albums()).to eq([])
     end
+
+    it 'sets the id attribute' do
+      expect(@artist.id()).to be > 0
+    end
   end
 end
