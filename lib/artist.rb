@@ -17,6 +17,7 @@ class Artist
 
   def save()
     @@artists.push(self)
+    @@next_id += 1
   end
 
 end

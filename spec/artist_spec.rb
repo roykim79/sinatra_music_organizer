@@ -32,5 +32,12 @@ describe Artist do
       @artist.save()
       expect(Artist.all()).to eq([@artist])
     end
+
+    it 'will increment @@next_id by 1' do
+      @artist.save()
+      artist2 = Artist.new({:name => 'Mike', :genre => 'Rock'})
+      artist2.save()
+      expect(artist2.id() - @artist.id()).to eq(1)
+    end
   end
 end
