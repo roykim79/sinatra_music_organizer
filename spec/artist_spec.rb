@@ -70,4 +70,11 @@ describe Artist do
       expect(@artist.albums()).to eq(['Foo'])
     end
   end
+
+  describe '.find' do
+    it 'finds the album with the id parameter' do
+      @artist.save()
+      expect(Artist.find(@artist.id())).to eq(@artist)
+    end
+  end
 end

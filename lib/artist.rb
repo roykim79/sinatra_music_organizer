@@ -20,6 +20,10 @@ class Artist
     @@artists = []
   end
 
+  def self.find(id)
+    @@artists.find {|artist| artist.id() == id}
+  end
+
   def save()
     @@artists.push(self)
     @@next_id += 1
@@ -28,5 +32,4 @@ class Artist
   def add_album(name)
     @albums.push(name)
   end
-
 end
