@@ -26,4 +26,9 @@ describe 'the artist path', :type => :feature do
     expect(page).to have_content('John')
     expect(page).to have_content('Rock')
   end
+
+  it 'displays a list of links of artist names' do
+    click_button 'Add'
+    expect(page).to have_css('a', :text => 'John')
+  end
 end

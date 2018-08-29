@@ -1,6 +1,10 @@
 <ul id="artists">
   <% @artists.each do |artist| %>
-    <li class="artist"><%= artist.name %>/<%= artist.genre %></li>
+    <li class="artist">
+      <a href="/artists/<%= artist.id %>">
+        <%= artist.name %>/<%= artist.genre %>
+      </a>
+    </li>
   <% end %>
 </ul>
 
