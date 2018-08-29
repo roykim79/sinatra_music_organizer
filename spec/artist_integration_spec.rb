@@ -11,6 +11,7 @@ describe 'the artist path', :type => :feature do
   it 'starts off with showing the user a form to add a new artist' do
     expect(page).to have_css('form#new-artist')
     expect(page).to have_css('input[name='"name"']')
+    expect(page).to have_css('button', :text => 'Add')
   end
 
   it 'starts off with showing the user an empty list of artists' do
