@@ -67,8 +67,13 @@ describe Artist do
   describe '#add_album' do
     it 'adds and album the the albums list of the artist' do
       @artist.save()
-      @artist.add_album('Foo')
-      expect(@artist.albums()).to eq(['Foo'])
+      album = {
+        :name => 'Foo',
+        :date_released => '1/1/2000',
+        :cover => ''
+      }
+      @artist.add_album(album)
+      expect(@artist.albums()).to eq([album])
     end
   end
 
