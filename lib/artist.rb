@@ -1,5 +1,6 @@
 class Artist
   @@next_id = 1
+  @@artists = []
 
   attr_accessor :name, :genre, :albums, :id
 
@@ -8,6 +9,10 @@ class Artist
     @genre = attributes.fetch(:genre)
     @albums = []
     @id = @@next_id
+  end
+
+  def self.all()
+    @@artists
   end
 
 end

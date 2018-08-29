@@ -19,4 +19,10 @@ describe Artist do
       expect(@artist.id()).to be > 0
     end
   end
+
+  describe '.all' do
+    it 'starts off as an empty list' do
+      expect(Artist.all()).to eq([])
+    end
+  end
 end
