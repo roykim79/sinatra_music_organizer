@@ -1,9 +1,10 @@
 class Artist
 
-  attr_accessor :name
+  attr_accessor :name, :genre
 
-  def initialize(name)
-    @name = name
+  def initialize(attributes)
+    @name = attributes.fetch(:name)
+    @genre = attributes.fetch(:genre)
   end
 
 end
