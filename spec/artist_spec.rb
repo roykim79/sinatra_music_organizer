@@ -3,6 +3,7 @@ require 'artist'
 
 describe Artist do
   before :each do
+    Artist.clear()
     @artist = Artist.new({:name => 'John', :genre => 'Pop'})
   end
 

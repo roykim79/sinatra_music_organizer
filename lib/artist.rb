@@ -18,6 +18,7 @@ class Artist
 
   def self.clear()
     @@artists = []
+    @@next_id = 1
   end
 
   def self.find(id)

@@ -1,13 +1,17 @@
 <ul id="artists">
   <% @artists.each do |artist| %>
-    <li class="artist"><%= artist.name %></li>
+    <li class="artist"><%= artist.name %>/<%= artist.genre %></li>
   <% end %>
 </ul>
 
-<form id="new-artist" class="" action="index.html" method="post">
+<form id="new-artist" class="" action="/" method="post">
   <div class="form-group">
     <label for="name">Artist Name</label>
     <input class="form-control" type="text" name="name" value="">
+  </div>
+  <div class="form-group">
+    <label for="genre">Genre</label>
+    <input class="form-control" type="text" name="genre" value="">
   </div>
   <button type="submit" name="button">Add</button>
 </form>
