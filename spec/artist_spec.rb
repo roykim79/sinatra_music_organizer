@@ -2,10 +2,11 @@ require 'rspec'
 require 'artist'
 
 describe Artist do
+  before :each do
+    @artist = Artist.new({:name => 'John', :genre => 'Pop'})
+  end
+
   describe '#initialize' do
-    before :each do
-      @artist = Artist.new({:name => 'John', :genre => 'Pop'})
-    end
     it 'sets the name of the artist and the genre' do
       expect(@artist.name()).to eq('John')
       expect(@artist.genre()).to eq('Pop')
@@ -23,6 +24,13 @@ describe Artist do
   describe '.all' do
     it 'starts off as an empty list' do
       expect(Artist.all()).to eq([])
+    end
+  end
+
+  describe '#save' do
+    it 'adds the artist to the artists list' do
+      @artist.save()
+      expect(Artist.all()).to eq([@artist])
     end
   end
 end

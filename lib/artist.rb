@@ -15,4 +15,8 @@ class Artist
     @@artists
   end
 
+  def save()
+    @@artists.push(self)
+  end
+
 end
