@@ -12,4 +12,9 @@ describe 'the artist path', :type => :feature do
     expect(page).to have_css('form#new-artist')
     expect(page).to have_css('input[name='"name"']')
   end
+
+  it 'starts off with showing the user an empty list of artists' do
+    expect(page).to have_css('ul#artists')
+    expect(page).not_to have_css('li.artist')
+  end
 end
