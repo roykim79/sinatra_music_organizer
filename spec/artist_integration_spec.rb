@@ -35,7 +35,32 @@ describe 'the artist path', :type => :feature do
   it 'will send user to a detailed view of artist when clicking on the name link' do
     click_button 'Add'
     click_link 'John'
-    expect(page).to have_content 'Artist details'
-    expect(page).to have_content 'John'
+    expect(page).to have_content('Artist details')
+    expect(page).to have_content('John')
+    expect(page).to have_css('ul.albums')
+  end
+
+  it 'will show a form in the detail view where a user can add and album' do
+    click_button 'Add'
+    click_link 'John'
+    expect(page).to have_css('form#new-album')
+    expect(page).to have_css('label', :text => 'Album name')
+    expect(page).to have_css('label', :text => 'Date released')
+  end
+
+  it 'will allow to user to see an album they have added' do
+    click_button 'Add'
+    click_link 'John'
+    fill_in 'name', :with => 'Foo'
+    fill_in 'date_released', :with => '1/1/2000'
+    click_button 'Add album'
+    expect(page).to have_css('li.album', :text => 'Foo')
+  end
+
+  it 'allows the user to go back to the artists view from the detail view' do
+    click_button 'Add'
+    click_link 'John'
+    click_link 'Back to artists'
+    expect(page).to have_css('ul#artists')
   end
 end

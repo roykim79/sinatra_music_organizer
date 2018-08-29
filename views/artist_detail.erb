@@ -1,3 +1,4 @@
+<a href="/artists">Back to artists</a>
 <h1>Artist details</h1>
 <div class="name">
   <%= @artist.name %>
@@ -8,6 +9,29 @@
 
 <ul class="albums">
   <% @artist.albums.each do |album| %>
-    <li class="album"><%= album.name %>/<%= album.date_released %></li>
+    <li class="album">
+      <% if album[:cover].length > 0 %>
+        <img src="<%= album[:cover] %>" alt="" />
+      <% end %>
+
+      <%= album[:name] %>/
+      <%= album[:date_released] %>
+    </li>
   <% end %>
 </ul>
+
+<form id="new-album" class="" action="/artists/<%= @artist.id %>" method="post">
+  <div class="form-group">
+    <label for="name">Album name</label>
+    <input class="form-control" type="text" name="name" value="">
+  </div>
+  <div class="form-group">
+    <label for="date_released">Date released</label>
+    <input class="form-control" type="text" name="date_released" value="">
+  </div>
+  <div class="form-group">
+    <label for="cover">URL for album cover</label>
+    <input class="form-control" type="text" name="cover" value="">
+  </div>
+  <button class="btn btn-primary" type="submit" name="button">Add album</button>
+</form>
