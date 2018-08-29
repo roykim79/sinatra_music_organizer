@@ -40,4 +40,12 @@ describe Artist do
       expect(artist2.id() - @artist.id()).to eq(1)
     end
   end
+
+  describe '.clear' do
+    it 'empties the artists list' do
+      @artist.save()
+      Artist.clear()
+      expect(Artist.all()).to eq([])
+    end
+  end
 end

@@ -15,6 +15,10 @@ class Artist
     @@artists
   end
 
+  def self.clear()
+    @@artists = []
+  end
+
   def save()
     @@artists.push(self)
     @@next_id += 1
