@@ -1,0 +1,13 @@
+<h1>Artist details</h1>
+<div class="name">
+  <%= @artist.name %>
+</div>
+<div class="genre">
+  <%= @artist.genre %>
+</div>
+
+<ul class="albums">
+  <% @artist.albums.each do |album| %>
+    <li class="album"><%= album.name %>/<%= album.date_released %></li>
+  <% end %>
+</ul>

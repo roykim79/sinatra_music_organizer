@@ -31,4 +31,11 @@ describe 'the artist path', :type => :feature do
     click_button 'Add'
     expect(page).to have_css('a', :text => 'John')
   end
+
+  it 'will send user to a detailed view of artist when clicking on the name link' do
+    click_button 'Add'
+    click_link 'John'
+    expect(page).to have_content 'Artist details'
+    expect(page).to have_content 'John'
+  end
 end

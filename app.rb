@@ -5,6 +5,7 @@ require './lib/artist'
 require 'pry'
 
 get '/' do
+  Artist.clear()
   @artists = Artist.all()
   erb(:artists)
 end
@@ -17,4 +18,9 @@ post '/' do
   artist.save()
   @artists = Artist.all()
   erb(:artists)
+end
+
+get '/artists/:id' do
+  @artist = Artist.find(params[:id].to_i)
+  erb(:artist_detail)
 end
